@@ -7,11 +7,11 @@ let visitedCities = ['Rawalpindi' , 'Mirpur']
 let mergeCities = FavoritesCities.concat(visitedCities)
 
 // Checking the length of the arrays using the length method
-console.log(mergeCities.length)
+// console.log(mergeCities.length)
 
 // Finding any specific element in the array
 let citylist = ["Madina" , "Berlin" , "Abu Dhabi" , "Karachi"]
 let isMadinaInList = citylist.includes("Madina")
-console.log(isMadinaInList)
+// console.log(isMadinaInList)
 
 
