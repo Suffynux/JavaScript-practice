@@ -48,3 +48,29 @@ for (let i = 0; i < arrValues.length; i++) {
 console.log(multipliedNumbers);
 */
 
+
+
+// For in Loop
+
+// Excercise no 1 
+
+let worldCities = { "Sydney": 10000, "Tokyo": 100, "Berlin": 100, "Paris": 100 };
+let smallCities = {};
+for (const city in worldCities) {
+    // Check if the population is 10,000 or less
+    if (worldCities[city] < 10000) {
+        // Add the city to smallCities if the condition is met
+        smallCities[city] = worldCities[city];
+    }
+}
+// console.log(smallCities);
+
+// For Each Loop
+
+
+
+
+
+
+
+
