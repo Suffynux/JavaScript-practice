@@ -18,3 +18,7 @@ class BankAccount {
   /*
   In Encapsulation, we have to use private variables and methods to access them and we use the data according to our need.In the above example we hide the balance and shows only when we need in deposit and getbalance 
   */
+
+
+
+  
