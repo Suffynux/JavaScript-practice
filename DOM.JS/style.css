@@ -13,3 +13,8 @@ body {
 .hidden{
     display: none !important;
 }
+
+
+ul li{
+    list-style: none;
+}
