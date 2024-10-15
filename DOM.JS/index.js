@@ -16,4 +16,11 @@ addEventListener("click", function(){
 })
 
 
-
+// example 3
+document.getElementById("changeorder").
+addEventListener("click" , function(){
+    let Coffetype = document.getElementById("coffeetype");
+    Coffetype.textContent = "Expresso"
+    Coffetype.style.backgroundColor = "red"
+    Coffetype.style.padding = "5px"
+})
