@@ -12,5 +12,8 @@ document.getElementById('highlightFirstCity').
 addEventListener("click", function(){
     let citieslist = (document.getElementById('citieslist'))
     let firstElement = citieslist.firstElementChild
-    
+    firstElement.classList.add("highlight")
 })
+
+
+
