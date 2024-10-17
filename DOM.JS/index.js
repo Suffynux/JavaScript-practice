@@ -24,3 +24,13 @@ addEventListener("click" , function(){
     Coffetype.style.backgroundColor = "red"
     Coffetype.style.padding = "5px"
 })
+
+
+// Example 4
+// In this example we selected a list and tell the user which list items they clicked and then we show the number of the list items the clicked the content of that list item.
+document.getElementById("teaList").
+addEventListener("click" , function(value){
+    alert(`You have selected ${value.target.textContent} and the you've selected number ${value.AT_TARGET}`)
+})
+
+// Example 5 
