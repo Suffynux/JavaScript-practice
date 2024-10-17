@@ -15,6 +15,7 @@ addEventListener("click", function(){
     firstElement.classList.add("highlight")
 })
 
+<<<<<<< HEAD
 
 // example 3
 document.getElementById("changeorder").
@@ -24,6 +25,9 @@ addEventListener("click" , function(){
     Coffetype.style.backgroundColor = "red"
     Coffetype.style.padding = "5px"
 })
+=======
+// example three
+>>>>>>> 791ec589cb3d7164282e01c2e8f265d7e4d396b6
 
 
 // Example 4
