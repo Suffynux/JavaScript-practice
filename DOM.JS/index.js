@@ -15,7 +15,6 @@ addEventListener("click", function(){
     firstElement.classList.add("highlight")
 })
 
-<<<<<<< HEAD
 
 // example 3
 document.getElementById("changeorder").
@@ -25,11 +24,8 @@ addEventListener("click" , function(){
     Coffetype.style.backgroundColor = "red"
     Coffetype.style.padding = "5px"
 })
-=======
-// example three
->>>>>>> 791ec589cb3d7164282e01c2e8f265d7e4d396b6
 
-
+    ``
 // Example 4
 // In this example we selected a list and tell the user which list items they clicked and then we show the number of the list items the clicked the content of that list item.
 document.getElementById("teaList").
