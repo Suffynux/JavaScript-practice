@@ -34,4 +34,3 @@ addEventListener("click" , function(value){
 })
 
 // Example 5 
-
