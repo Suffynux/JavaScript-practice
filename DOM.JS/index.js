@@ -36,5 +36,15 @@ addEventListener("click" , function(value){
 document.getElementById("feedbackForm").addEventListener('submit', function(event) {
     event.preventDefault(); // Prevents the default form submission
     let feedback = document.getElementById("feedbackInput").value; // Get the value of the input
-    console.log(feedback); // Log the input value
+    let myparagraph = document.getElementById("paragraph")
+    
+    // Showing variable feedback
+    document.getElementById("displayFeedback").textContent = (`this is ${feedback}`) 
 });
+
+// Example 6
+// Adding a event and switching between using the toggle method
+
+    document.getElementById("togglehighlight").addEventListener('click', function(){
+    document.getElementById("description").classList.toggle("highlight");
+})

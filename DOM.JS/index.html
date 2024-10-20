@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Manipulation</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .highlight {
+    background-color: yellow;
+    font-weight: bold;
+    color: black !important;
+    }
+
+    </style>
 </head>
 <body>
     <h1>JavaScrit Dom</h1>
+    
 
     <!-- Accessing the DOM  -->
     <section id="example-1">
@@ -57,7 +66,15 @@
             <input type="text" id="feedbackInput" placeholder="Please write Feedback"/>
             <button type="submit">Submit feedback</button>
         </form>
-        <p id="displayFeedback"></p> <!-- Corrected the id spelling -->
+        <p id="displayFeedback"><b id="paragraph">Feedback:</b></p> <!-- Corrected the id spelling -->
+    </section>
+ 
+    <!-- CSS Classes Manipulation -->
+ 
+    <section>
+        <h2 id="description">This will Change colors</h2>
+        <button id="togglehighlight">Toggle Color</button>
+
     </section>
     
      
