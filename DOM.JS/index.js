@@ -25,7 +25,6 @@ addEventListener("click" , function(){
     Coffetype.style.padding = "5px"
 })
 
-    ``
 // Example 4
 // In this example we selected a list and tell the user which list items they clicked and then we show the number of the list items the clicked the content of that list item.
 document.getElementById("teaList").
@@ -34,3 +33,8 @@ addEventListener("click" , function(value){
 })
 
 // Example 5 
+document.getElementById("feedbackForm").addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevents the default form submission
+    let feedback = document.getElementById("feedbackInput").value; // Get the value of the input
+    console.log(feedback); // Log the input value
+});
