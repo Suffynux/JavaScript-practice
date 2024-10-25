@@ -1,4 +1,3 @@
-/*
 
 function fetchData() {
     return new Promise((Resolve, reject) => {
@@ -19,8 +18,6 @@ fetchData()
     console.log(error);
 })
 
-
-*/
 
 
 // Example 
@@ -116,3 +113,7 @@ Promise.all([fetchUserData(), fetchPost(), fetchComments()])
         // If any promise fails, this will catch the error
         console.error("One of the promises failed:", error);
     });
+
+
+
+    
