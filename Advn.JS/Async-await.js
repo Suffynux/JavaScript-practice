@@ -21,3 +21,5 @@ async function getData () {
        console.log("failed to load data") 
     }
 }
+
+getData()
