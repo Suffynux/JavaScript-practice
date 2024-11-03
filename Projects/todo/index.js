@@ -1,73 +1,75 @@
-document.addEventListener('DOMContentLoaded', ()=> {
+document.addEventListener('DOMContentLoaded', () => {
     const todoInput = document.getElementById('input-task');
-const addTaskButton = document.getElementById('add-task-btn');
-const todoList = document.getElementById('todo-list');
+    const addTaskButton = document.getElementById('add-task-btn');
+    const todoList = document.getElementById('todo-list');
 
-let tasks = JSON.parse(localStorage.getItem('tasks'))||[];
-// For each loop for showing each task
-tasks.forEach((task) => renderTask(task));
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    // Show each task on load
+    tasks.forEach((task) => renderTask(task));
 
-// Adding the logic to grab the button to add the task in the array 
-addTaskButton.addEventListener('click', ()=> {
-    const taskText = todoInput.value.trim()
-    if (taskText === "") return;
+    // Add new task on button click
+    addTaskButton.addEventListener('click', () => {
+        const taskText = todoInput.value.trim();
+        if (taskText === "") return;
 
-    const newTask = {
-        id : Date.now(),
-        text : taskText,
-        completed : false,
-    };
-    tasks.push(newTask);
-    saveTask();
-    todoInput.value = " "
-    console.log(tasks)
-    
-})
-
-// Rendering the tasks to show in the DOM
-function renderTask(task){
-    const li = document.createElement("li");
-    li.setAttribute("data-id" , task.id);
-    if (task.completed) li.classList.add("completed");
-    li.innerHTML = `
-            <li class="bg-gray-400 rounded-md p-3 m-3 flex justify-between items-center">
-                <span>${task.text}</span>
-                <button class="text-white bg-red-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" id="del-task-btn">
-                    Delete
-                </button>`
-
-    // Add an event listener to the <li> element for handling task completion status.
-    // This listener will trigger each time the user clicks on the <li> item.
-    li.addEventListener("click", (e) => {
-
-        // If the target of the click event is a <button> element, exit the function.
-        if (e.target.tagName === "BUTTON") return;
-
-        // If the task was marked as completed (true), it will now be incomplete (false), and vice versa.
-        task.completed = !task.completed;
-
-        // Apply a visual effect by blurring the <li> element to indicate that it has been completed.
-        li.style.filter = "blur(25px)";
-
-        // Call the saveTask() function to persist the current task state.
+        const newTask = {
+            id: Date.now(),
+            text: taskText,
+            completed: false,
+        };
+        tasks.push(newTask);
         saveTask();
+        renderTask(newTask);  // Render the new task immediately
+        todoInput.value = "";
+        console.log(tasks);
     });
 
-    // Adding the event listener to the Button of li
+    // Function to render a task in the DOM
+    function renderTask(task) {
+        const li = document.createElement("li");
+        li.setAttribute("data-id", task.id);
+        if (task.completed) li.classList.add("completed");
+
+        // Set the inner HTML content without nesting `<li>`
+        li.innerHTML = `
+            <span>${task.text}</span>
+            <button class="text-white bg-teal-700 hover:bg-red-600  font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                Delete
+            </button>`;
+
+        // Toggle task completion on `<li>` click
+        li.addEventListener("click", (e) => {
+            if (e.target.tagName === "BUTTON") return;
+            task.completed = !task.completed;
+            li.classList.toggle("completed");
+            if (task.completed) {
+                li.style.filter = "blur(2px)";
+            } else if (!task.completed) {
+                li.style.filter = "blur(0px)";
+            }
+            saveTask();
+        });
+
+
+         // Add Tailwind classes to style the new task item
+         li.className = "bg-gray-400 rounded-md p-3 m-3 flex justify-between items-center";
 
 
 
+        // Delete task on button click
+        li.querySelector("button").addEventListener("click", (e) => {
+            e.stopPropagation();
+            const taskId = parseInt(li.getAttribute("data-id")); // Convert to number for comparison
+            tasks = tasks.filter(t => t.id !== taskId);
+            saveTask();
+            li.remove(); // Remove `<li>` element from DOM
+        });
 
-    todoList.append(li)
+        todoList.append(li);
     }
 
-
-
-
-
-// saving in the task in Local storage
-function saveTask() {
-    localStorage.setItem('tasks' ,JSON.stringify(tasks));
-};
-
-} )
+    // Save tasks to local storage
+    function saveTask() {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+});

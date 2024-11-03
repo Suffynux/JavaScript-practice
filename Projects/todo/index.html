@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo Creator</title>
+    <title>Todo Creator</title> <!-- Title in the browser tab, no styling can be applied here -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <style>
+        /* Importing Poppins font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        /* Applying Poppins font to the entire body */
+        body {
+            font-family: 'Poppins', sans-serif; /* All body text will use Poppins font */
+        }
+    </style>
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="flex justify-center align-center bg-green-2" style="background-color: #DFF2EB;">
     <div class="container flex items-center justify-center h-screen max-w-auto">
-        <div class=" bg-gray-700 rounded-md p-9 shadow-lg" id="input-container">
-            <h1 class="p-1 text-center mb-8 font-serif font-semibold text-white ">Todo List!</h1>
+        <div class="bg-gray-700 rounded-md p-8 shadow-lg" id="input-container" style="background-color: #4A628A !important;">
+            <h1 class="p-1 text-center mb-8 font-semibold text-white text-2xl">Todo List!</h1>
             <input type="text" id="input-task" placeholder="Add a New task" class="bg-gray-200 p-1 bg-transparent placeholder:text-slate-400 text-white text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" id="add-task-btn">Add task</button>
-
-            <ul id="todo-list" class="text-white">
-
-            </li>
-
-                
-            </ul>
-
+            <button class="text-white bg-teal-700 hover:bg-teal-100 hover:text-black focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" id="add-task-btn">Add task</button>
+            
+            <ul id="todo-list" class="text-white"></ul>
         </div>
-
     </div>
     <script src="index.js"></script>
 </body>
 </html>
+
