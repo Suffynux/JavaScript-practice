@@ -1,13 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <!-- Favicon for the Website  \-->
-    <link rel="icon" type="image/x-icon" href="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png">
-</head>
-<body>
-    
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App</title>
+        <!-- Favicon for the Website -->
+        <link rel="icon" type="image/x-icon" href="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png">
+        <!-- Tailwind CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="flex items-center justify-center min-h-screen">
+
+        <div class="g-gray-700 rounded-md p-2  h-auto shadow-lg h-96 flex justify-center items-center  text-center" id="main">
+            <div id="WeatherInput" class="flex flex-col items-center w-97">
+                <!-- Centered Image -->
+                <div class="mb-5">
+                    <img src="https://media.istockphoto.com/id/612023744/photo/blue-and-orange-sunset-sky.jpg?s=1024x1024&w=is&k=20&c=SNFvywQnoNjVv3hqxHgI3WniG6UBfEpE_4oVzNReW7E=" alt="Weather Image" class="rounded-lg w-full h-60 object-cover object-cover">
+                </div>
+                <h1 class="text-white">Check the weather of any City! </h1>
+
+                <div class="flex justify-center pt-4 flex-col sm:flex-row items-center flex-shrink w-full">
+                    <!-- Input field -->
+                    <input type="text" id="weatherInput" placeholder="Please enter city name" class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-lg w-full sm:w-60 p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+
+                    <!-- Button -->
+                    <button id="weatherBtn" class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-lg p-2 sm:m-2 m-2 focus:ring-2 focus:ring-blue-500 focus:outline-none hover:bg-blue-600 hover:text-white">
+                        Weather forecast
+                    </button>
+                    
+                </div>
+
+                <!-- This data is for when we get data from the api so we want to remove the hidden class and then show the data -->
+                <div id="weatherInfo" class="hidden">
+                    <h2 id="cityName">Mirpur</h2>
+                    <p id="temperature"></p>
+                    <p id="description"></p>
+
+
+                <!-- Error message when we want to show error then we add the hidden class and when we show the data then we will remove the error message -->
+            </div>
+            <p class="hidden" id="errorMessage">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eius animi molestiae fuga nisi id, velit quam odio asperiores magni laboriosam suscipit temporibus accusantium ipsa itaque, incidunt praesentium perspiciatis neque.</p>
+            </div>
+        </div>
+
+
+        <script src="index.js"></script>
+
+    </body>
+    </html>
