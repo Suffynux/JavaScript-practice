@@ -37,3 +37,7 @@ body{
 .hidden {
     display: none;
 }
+
+#errorMessage {
+    color: rgb(238, 53, 53);
+}

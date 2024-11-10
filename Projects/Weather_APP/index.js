@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", ()=>{
-
+document.addEventListener("DOMContentLoaded", () => {
 
     // Grabbing all the elements
     const weatherInput = document.getElementById("weatherInput");
@@ -10,49 +9,61 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const descriptionDisplay = document.getElementById("description");
     const errorDisplay = document.getElementById("errorMessage");
 
-
     // My API key
     const API_KEY = "2c4b02009c115be329cf2a2baf25fc1c";
 
+    // Function to fetch and display weather data
+    async function getWeatherData(city) {
+        try {
+            const weatherData = await fetchWeatherData(city);
+            displayWeatherData(weatherData);
+        } catch (error) {
+            showError();
+        }
+    }
 
     // Adding event listener to the button 
-    getWeatherBtnc.addEventListener("click" , () => {
+    getWeatherBtn.addEventListener("click", () => {
         let city = weatherInput.value.trim();
         if (!city) return;
-        // Alway remember when make requests on the other servers from Sir hitesh
-        // Data will take some times
-        // It may throw some errors 
-        // Servers/database always in the other country 
-    
-        try {
-            fetcWeatherData(city)
-        } catch (error) {
-            showError
-        }
-
-
+        getWeatherData(city);
     });
 
+    // Adding event listener for Enter key press
+    weatherInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            let city = weatherInput.value.trim();
+            if (!city) return;
+            getWeatherData(city);
+        }
+    });
 
     // Creating functions for Fetch data and display data
-    function fetcWeatherData(city) {
+    async function fetchWeatherData(city) {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+        let response = await fetch(url);
 
+        if (!response.ok) {
+            throw new Error("City not found");
+        }
+        const data = await response.json();
+        return data;
+    }
 
-    };
+    function displayWeatherData(data) {
+        console.log(data);
+        weatherInfo.classList.remove('hidden');  
+        errorDisplay.classList.add('hidden');
 
-    function displayWeatherData (weatherData) {
+        const { name, main, weather } = data;  
+        cityNameDisplay.textContent = name;
+        temperatureDisplay.textContent = `Temperature of ${name} is ${main.temp}`;
+        let description = weather[0].description;
+        descriptionDisplay.textContent = description.toUpperCase();
+    }
 
-    };
-
-
-    // In the below function we add the hidden to the weather Info data in case we show the error and remove the hidden class from the error message in case of error 
     function showError() {
         weatherInfo.classList.add('hidden');
         errorDisplay.classList.remove('hidden');
-
     }
-
-
-
-
 })
