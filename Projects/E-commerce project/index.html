@@ -3,49 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <!-- Tailwind CDN -->
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        #main{
-            background-color: #fff;
-            
-        }
-    </style>
-    <link rel="stylesheet" href="style.css">
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-900">
+<body class="bg-gray-800 flex align-center justify-center items-center min-h-screen">
+    <div class="h-auto w-60 bg-yellow-400 text-white rounded-lg" id="main_container ">
+        <div class="card text-black">
+            <h1 class="text-black font-bold m-3 ">Products</h1>
+            <!-- Products -->
+             <div id="productlist">
+                <!-- display using JavaScript -->
+             </div>
+            <div class="pl-3 flex items-center" id="empty-cart">
+                <p class="">Your cart is empty</p>
+  
 
-    <div class="g-gray-200 rounded-md p-2  h-auto shadow-lg h-96 flex justify-center items-center  text-center" id="main">
-        <div id="WeatherInput" class="flex flex-col items-center w-97 bg-gry-200">
-            <h1 class="text-black">Check the weather of any City! </h1>
-
-            <div class="flex justify-center pt-4 flex-col sm:flex-row items-center flex-shrink w-full" id="container">
-                <!-- Input field -->
-                <input type="text" id="weatherInput" placeholder="Please enter city name" class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-lg w-full sm:w-60 p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-
-                <!-- Button -->
-                <button id="weatherBtn" class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-lg p-2 sm:m-2 m-2 focus:ring-2 focus:ring-blue-500 focus:outline-none hover:bg-blue-600 hover:text-white">
-                    Weather forecast
-                </button>
-                
+            </div>
+            <!-- cart total -->
+            <div id="cart-total flex justify-center">
+                <p class="pl-3">Total: <span id="total-price">$0.00</span></p>
+                <button class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-lg p-2 sm:m-2 m-2 focus:ring-2 focus:ring-blue-500 focus:outline-none hover:bg-blue-600 hover:text-white" id="checkout-btn">Checkout</button>
             </div>
 
-            <!-- This data is for when we get data from the api so we want to remove the hidden class and then show the data -->
-            <div id="weatherInfo" class="hidden">
-                <h2 id="cityName" class="text-white "></h2>
-                <p id="temperature" class="text-yellow-200"></p>
-                <p id="description" class="text-blue-500"></p>
-
-
-            <!-- Error message when we want to show error then we add the hidden class and when we show the data then we will remove the error message -->
-        </div>
-        <p class="hidden" id="errorMessage" >Please enter Valid City Name</p>
         </div>
     </div>
-
-
-    <script src="index.js"></script>
-
+    <script src="E.js"></script>
 </body>
 </html>
