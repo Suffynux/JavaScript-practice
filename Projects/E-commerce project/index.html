@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body class="bg-gray-800 flex align-center justify-center items-center min-h-screen">
     <div class="h-auto w-80 bg-yellow-400 text-white rounded-lg" id="main_container ">
@@ -14,17 +19,22 @@
              <div id="productlist">
                 <!-- display using JavaScript -->
              </div>
-            <div class="pl-3 flex items-center" id="empty-cart">
-                <p class="">Your cart is empty</p>
+            <div class="pl-3 flex items-center pb-2" id="empty-cart" class="hidden">
+                <p>Your cart is empty</p>
   
 
             </div>
             <!-- cart total -->
-            <div id="cart-total flex justify-center">
-                <p class="pl-3">Total: <span id="total-price">$0.00</span></p>
-                <button class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-lg p-2 sm:m-2 m-2 focus:ring-2 focus:ring-blue-500 focus:outline-none hover:bg-blue-600 hover:text-white" id="checkout-btn">Checkout</button>
-            </div>
+             <div id="item">
 
+             </div>
+            
+            <div id="cart-total" class="hidden" class = "flex justify-end">
+                <p class="pl-3 ">Total: <span id="total-price" >$0.00</span></p>
+                <button class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-lg p-2 sm:m-2 m-2 focus:ring-2 focus:ring-blue-500 focus:outline-none hover:bg-blue-600 hover:text-white" id="checkout-btn">Checkout</button>
+                <button class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-lg p-2 sm:m-2 m-2 focus:ring-2 focus:ring-blue-500 focus:outline-none hover:bg-blue-600 hover:text-white" id="remove-btn">Clear Checkout</button>
+                <p id="totalproducts"></p>
+            </div>
         </div>
     </div>
     <script src="E.js"></script>
