@@ -8,6 +8,7 @@ const quotes = [
     "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
     "It does not matter how slowly you go as long as you do not stop. - Confucius",
     "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+    "Happiness is not something ready made. It comes from your own actions. - Dalai Lama" ,
     "Happiness is not something ready made. It comes from your own actions. - Dalai Lama"
   ];
   
