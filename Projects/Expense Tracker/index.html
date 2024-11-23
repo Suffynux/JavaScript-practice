@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense</title>
+    <!-- tailwind cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-500">
+    <div class="bg-gray-800 text-white w-auto h-auto rounded-lg">
+        <h1 class="p-2 text-center font-semibold max-w-lg text-2xl leading-relaxed text-white">Expense Tracker</h1>
+        <div class="input-form  bg-gray-800  text-black m-2 sm:p-2 flex flex-col gap-4" >
+            <form class="flex flex-col justify-center align-center items-center  gap-4 sm:flex sm:flex-row ">
+                
+                <input type="text" placeholder="Expense Name" id="Expense-Name" class="rounded-lg  w-full sm:w-auto sm:m-3">
+                <input type="number" id="amount" placeholder="Amount" required class="rounded-lg  w-full sm:w-auto sm:m-3 ">
+                <button class="bg-red-700 rounded-lg text-sm items-center p-2 sm:p-1  text-white">Add Expense</button>
+            </form>
+
+            <h1 class="text-white text-center ">Expenses</h1>
+            <ul id="expenses">
+                <!-- Expenses will be dynamically come here  -->
+            </ul>
+
+            <h3 class="text-white pl-2 sm:pl-4">Total <span id="total-Amount">$00</span></h3>
+        </div>
+    </div>
+</body>
+</html>
