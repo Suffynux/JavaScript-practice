@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     Delete
                 </button>
             </div>`;
-            
+
             expenseList.append(li);
         });
     }
@@ -76,4 +76,27 @@ document.addEventListener("DOMContentLoaded", () => {
     function saveExpensesToLocal() {
         localStorage.setItem("expenses", JSON.stringify(expenses));
     }
+
+    // Delete expenses from local storage and from list 
+
+    expenseList.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+            // Get the ID of the clicked expense
+            const expenseId = parseInt(e.target.getAttribute('data-id'));
+    
+            // Filter the expenses array to exclude the expense with the matching ID
+            expenses = expenses.filter(expense => expense.id !== expenseId);
+    
+            // Save the updated expenses array to local storage
+            saveExpensesToLocal();
+    
+            // Re-render the expenses list
+            renderExpenses();
+    
+            // Update the total amount
+            updateTotal();
+        }
+    });
+    
 });
+
