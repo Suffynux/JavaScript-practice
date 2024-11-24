@@ -11,11 +11,11 @@
     <div class="bg-gray-800 text-white w-auto h-auto rounded-lg">
         <h1 class="p-2 text-center font-semibold max-w-lg text-2xl leading-relaxed text-white">Expense Tracker</h1>
         <div class="input-form  bg-gray-800  text-black m-2 sm:p-2 flex flex-col gap-4" >
-            <form class="flex flex-col justify-center align-center items-center  gap-4 sm:flex sm:flex-row ">
+            <form class="flex flex-col justify-center align-center items-center  gap-4 sm:flex sm:flex-row " id="expense-form">
                 
-                <input type="text" placeholder="Expense Name" id="Expense-Name" class="rounded-lg  w-full sm:w-auto sm:m-3">
-                <input type="number" id="amount" placeholder="Amount" required class="rounded-lg  w-full sm:w-auto sm:m-3 ">
-                <button class="bg-red-700 rounded-lg text-sm items-center p-2 sm:p-1  text-white">Add Expense</button>
+                <input type="text" placeholder="Expense Name" id="Expense-Name" class="rounded-lg  w-full sm:w-auto sm:m-3 p-2">
+                <input type="number" id="amount" placeholder="Amount" required class="rounded-lg  w-full sm:w-auto sm:m-3  p-2">
+                <button class="bg-red-700 rounded-lg text-sm items-center p-2 sm:p-1  text-white" id="expenseBtn">Add Expense</button>
             </form>
 
             <h1 class="text-white text-center ">Expenses</h1>
@@ -26,5 +26,6 @@
             <h3 class="text-white pl-2 sm:pl-4">Total <span id="total-Amount">$00</span></h3>
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
