@@ -1,55 +1,79 @@
-document.addEventListener("DOMContentLoaded" , () => {
-
-    // Grabing all the elements in the document
+document.addEventListener("DOMContentLoaded", () => {
+    // Grab elements in the document
     let expenseNameInput = document.getElementById("Expense-Name");
     let expenseAmountInput = document.getElementById("amount");
     let expenseList = document.getElementById("expenses");
     let totalAmountDisplay = document.getElementById("total-Amount");
-    let expenseBtn = document.getElementById("expenseBtn");
-    let form = document.getElementById("expense-form")
-    let expenses = [];
-    let totalAmount = calculateTotal();
+    let form = document.getElementById("expense-form");
 
-    
+    // Load existing expenses from local storage or initialize as empty array
+    let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
 
-    // Adding event listener to the form and then getting the value and performing the tasks on it except calculations
+    // Render existing data on page load
+    renderExpenses();
+    updateTotal();
+
+    // Form submission
     form.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent page reload
-        
+
         let name = expenseNameInput.value.trim();
         let amount = Number(expenseAmountInput.value.trim()); // Convert to a number
-        
+
         if (name !== "" && !isNaN(amount)) {
-            
-            let newExpenses = {
-                id : Date.now(),
-                name: name, 
-                amount: amount
-            }
-            
-            expenses.push(newExpenses);
-            savedExpensesToLocal()
+            let newExpense = {
+                id: Date.now(),
+                name: name,
+                amount: amount,
+            };
 
-            expenseAmountInput.value = "";
+            // Add new expense to the array
+            expenses.push(newExpense);
+
+            // Save to local storage and update UI
+            saveExpensesToLocal();
+            renderExpenses();
+            updateTotal();
+
+            // Clear inputs
             expenseNameInput.value = "";
-            
-        } 
-        
-
-
-
-
-        
-        
-
-
+            expenseAmountInput.value = "";
+        }
     });
-    
+
+    // Calculate total amount
     function calculateTotal() {
-            
+        return expenses.reduce((sum, expense) => sum + expense.amount, 0);
     }
-    // For saving the Form submission data into local storage and then calling this function in our if statement in the above
-    function savedExpensesToLocal() {
-        localStorage.setItem(expenses , JSON.stringify(expenses))
+
+    // Update total in the UI
+    function updateTotal() {
+        let total = calculateTotal();
+        totalAmountDisplay.innerHTML = total.toFixed(2);
+    }
+
+    // Render expenses
+    function renderExpenses() {
+        expenseList.innerHTML = ""; // Clear existing list
+        expenses.forEach((expense) => {
+
+            let li = document.createElement("li");
+            li.innerHTML = `
+            <div class="bg-gray-700 px-5 py-4 rounded-lg flex justify-between items-center mt-1">
+                <span class="p-2 text-white text-bold">${expense.name} - $${expense.amount}</span>
+                <button 
+                    data-id="${expense.id}" 
+                    class="text-black ml-6 bg-white hover:bg-red-600 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none hover:text-white dark:focus:ring-blue-800">
+                    Delete
+                </button>
+            </div>`;
+            
+            expenseList.append(li);
+        });
+    }
+
+    // Save expenses to local storage
+    function saveExpensesToLocal() {
+        localStorage.setItem("expenses", JSON.stringify(expenses));
     }
 });
