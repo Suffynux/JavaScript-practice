@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"/>
+
+      <link href="https://fonts.googleapis.com/css?family=Protest+Revolution:regular" rel="stylesheet" />
+      <style> 
+      body{
+        font-family: 'Protest Revolution' , 'sans-serif';
+      }
+
+      .hidden{
+        display: none;
+      }
+      </style>
+
+
+    <title>Quiz app</title>
+  </head>
+  <body class="flex justify-center items-center min-h-screen bg-gray-500">
+    <div class="main-container bg-white rounded-lg p-3">
+      <h1 class="p-3 text-lg font-bold text-center">Quiz App</h1>
+      <div id="quiz-container" class="flex flex-col items-center">
+        <div id="question-container" class="hidden">
+          <h2 id="question-text">
+            <!-- Question will show here dynamically -->
+          </h2>
+          <ul id="choices-list">
+            <!-- Choices will come dynamically -->
+            <button id="next-btn" class="bg-blue-500 rounded-md p-2">Next Question</button>
+          </ul>
+        </div>
+        <div id="result-container" class="hidden">
+          <h2>Your score is: <span id="score"></span></h2>
+          <button id="restart-btn" class="bg-blue-500 rounded-md p-2">Restart</button>
+        </div>
+        <button class="bg-blue-500 text-white rounded-md p-2 mt-4" id="start-btn">Start Quiz</button>
+        
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+  
+</html>
