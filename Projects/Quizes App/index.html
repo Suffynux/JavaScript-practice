@@ -52,11 +52,11 @@
     <title>Quiz app</title>
   </head>
   <body class="flex justify-center items-center min-h-screen bg-gray-500">
-    <div class="main-container bg-white rounded-lg p-3 w-auto">
+    <div class="main-container bg-white rounded-lg p-3">
       <h1 class="p-3 text-lg font-bold text-center">Quiz App</h1>
-      <div id="quiz-container" class="flex flex-col items-center m-9">
-        <div id="question-container" class="hidden flex flex-col items-center justify-center">
-          <h2 id="question-text" class="pt-2 font-bold text-xl">
+      <div id="quiz-container" class="flex flex-col items-center">
+        <div id="question-container" class="hidden">
+          <h2 id="question-text">
             <!-- Question will show here dynamically -->
           </h2>
           <ul id="choices-list" class="pt-3">
@@ -66,7 +66,7 @@
             </ul>
             <button id="next-btn" class="bg-blue-500 rounded-md p-2 text-white hover:bg-blue-700" class="hidden">Next Question</button>
         </div>
-        <div id="result-container" class="hidden flex flex-col justify-center items-center">
+        <div id="result-container" class="hidden">
           <h2>Your score is: <span id="score"></span></h2>
           <button id="restart-btn" class="bg-blue-500 rounded-md p-2 mt-4">Restart</button>
         </div>
