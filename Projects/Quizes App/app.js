@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startBtn.addEventListener("click", startQuiz);
   nextBtn.addEventListener('click' , nextQuestion);
-  restartBtn.addEventListener('click' , )
+  restartBtn.addEventListener('click' , restartQuiz )
 
   function startQuiz() {
     startBtn.classList.add("hidden");
@@ -137,5 +137,13 @@ document.addEventListener("DOMContentLoaded", () => {
     questionContainer.classList.add('hidden');
     resultContainer.classList.remove('hidden');
     scoreDisplay.innerHTML = `${score} out of ${questions.length}`;
+  }
+
+  function restartQuiz() {
+    let currentQuestionIndex = 0;
+    let score = 0;
+    resultContainer.classList.add("hidden");
+    startQuiz()
+  
   }
 });
