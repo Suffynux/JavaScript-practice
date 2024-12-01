@@ -54,8 +54,10 @@
   <body class="flex justify-center items-center min-h-screen bg-gray-500">
     <div class="main-container bg-white rounded-lg p-3 w-auto">
       <h1 class="p-3 text-lg font-bold text-center">Quiz App</h1>
-      <div id="quiz-container" class="flex flex-col items-center m-9">
+      <div id="quiz-container" class="flex flex-col items-center m-5">
         <div id="question-container" class="hidden flex flex-col items-center justify-center">
+          <!-- Question no will show here dynamically -->
+          <span id="question-number"></span>
           <h2 id="question-text" class="pt-2 font-bold text-xl">
             <!-- Question will show here dynamically -->
           </h2>
@@ -71,7 +73,7 @@
           <button id="restart-btn" class="bg-blue-500 rounded-md p-2 mt-4">Restart</button>
         </div>
         
-        <button class="bg-blue-500 text-white rounded-md p-2 mt-4 text-white" id="start-btn">Start Quiz</button>
+        <button class="bg-blue-500 text-white rounded-md p-2 mt-1 text-white" id="start-btn">Start Quiz</button>
         
       </div>
     </div>

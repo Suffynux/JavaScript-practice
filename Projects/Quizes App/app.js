@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.getElementById("start-btn");
   const nextBtn = document.getElementById("next-btn");
   const restartBtn = document.getElementById("restart-btn");
+  const questionNumber = document.getElementById("question-number")
 
   // Ten questions in an Array with the combination of object
   const questions = [
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startBtn.addEventListener("click", startQuiz);
   nextBtn.addEventListener('click' , nextQuestion);
+  restartBtn.addEventListener('click' , )
 
   function startQuiz() {
     startBtn.classList.add("hidden");
@@ -89,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showQuestion() {
     nextBtn.classList.add("hidden");
     choicesList.textContent = "";
+    questionNumber.textContent = `QuestionNo. ${currentQuestionIndex+ 1}`
 
     questionText.textContent = questions[currentQuestionIndex].question;
     // choicesList.textContent = ""
@@ -134,6 +137,5 @@ document.addEventListener("DOMContentLoaded", () => {
     questionContainer.classList.add('hidden');
     resultContainer.classList.remove('hidden');
     scoreDisplay.innerHTML = `${score} out of ${questions.length}`;
-
   }
 });
