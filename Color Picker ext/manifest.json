@@ -6,6 +6,11 @@
     "background": {
       "service_worker": "background.js"
     },
+    
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
     "action": {
       "default_popup": "./index.html",
       "default_icon": "./images/picker_48.png"

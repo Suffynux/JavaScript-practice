@@ -4,7 +4,11 @@ module.exports = {
     "./*.js",   // Include all JS files in the current directory
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'], // Add Poppins as a custom font
+      },
+    },
   },
   plugins: [],
 };
