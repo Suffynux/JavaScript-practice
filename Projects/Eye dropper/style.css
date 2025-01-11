@@ -1,0 +1,36 @@
+body{
+    background-color: #E5D0AC;
+    font-family: 'Poppins', sans-serif;
+}
+
+#heading1{
+    background-color: #A31D1D;
+    color: white;
+}
+
+#clearImageBtn{
+    background-color: #A31D1D;
+    color: white !important;
+}
+#PickColorBtn{
+    background-color: #A31D1D;
+    color: white !important;
+}
+
+#hidden{
+    display: none !important;
+}
+
+/* button{
+    width: auto !important;
+    height: auto !important;
+    padding: 30px impor;
+} */
+
+button:hover{
+    background-color: #D4B88F !important;
+}
+
+h2, p{
+    color : #6D2323 !important;
+}
